@@ -18,18 +18,16 @@ ArrayList<Particle> particles;
 
 void setup()
 {
-  size(1280, 720);
+  size(1080, 1080);
   smooth();
   frameRate(60);
-  // imageMode(CENTER);
-  // blendMode(ADD);
   
   box2d = new Box2DProcessing(this);
   box2d.createWorld();
   box2d.setGravity(0, -20);
 
-  windmill1 = new Windmill(width / 2 + 100, height - 101, 1);
-  windmill2 = new Windmill(width / 2 - 100, height - 101, -1);
+  windmill1 = new Windmill(width / 2 + 200, height - 201, 1);
+  windmill2 = new Windmill(width / 2 - 200, height - 201, -1);
   floor = new Floor();
   
   particles = new ArrayList<Particle>();
@@ -44,7 +42,7 @@ void draw()
   windmill2.display();
   floor.display();
   
-  if(frameCount % 5 == 0)
+  if(frameCount % 2 == 0)
   {
     particles.add(new Particle(width / 2 + random(-1, 1), 0));
   }
@@ -60,4 +58,13 @@ void draw()
       it.remove();
     }
   }
+  
+  println(frameCount);
+  /*
+  saveFrame("screen-#####.png");
+  if(frameCount > 3600)
+  {
+     exit();
+  }
+  */
 }

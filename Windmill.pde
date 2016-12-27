@@ -6,7 +6,7 @@ class Windmill
   
   Windmill(float x_, float y_, int direction)
   {
-    gear = new Gear(x_, y_, 100);
+    gear = new Gear(x_, y_, 200);
     pole = new Pole(x_, y_);
     
     RevoluteJointDef rjd = new RevoluteJointDef();

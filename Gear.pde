@@ -21,12 +21,12 @@ class Gear
       float x, y;
       if(i % 4 < 2)
       {
-        x = (size * 0.7) * cos(radians(angle));
-        y = (size * 0.7) * sin(radians(angle));
+        x = (size * 0.7) * cos(radians(angle + 2));
+        y = (size * 0.7) * sin(radians(angle + 2));
       }else
       {
-        x = size * cos(radians(angle));
-        y = size * sin(radians(angle));
+        x = size * cos(radians(angle + 2));
+        y = size * sin(radians(angle + 2));
       }
       points[i] = new PVector(x, y);
     }
@@ -70,7 +70,7 @@ class Gear
     rotate(-a);
     fill(128);
     stroke(128);
-    strokeWeight(1);
+    strokeWeight(2);
     for(PolygonShape ps : psArray)
     {
       beginShape();
